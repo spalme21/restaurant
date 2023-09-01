@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("console.log(\"Working!\");\n\n//# sourceURL=webpack://restaurant/./src/index.js?");
+eval("const content = document.querySelector(\"#content\");\n\nfunction updateDisplay() {\n    content.innerHTML = \"\";\n    content.appendChild(createHeader());\n    content.appendChild(createBody());\n};\n\nfunction createHeader() {\n    const header = document.createElement(\"div\");\n    header.setAttribute(\"id\", \"header\");\n    const title = document.createElement(\"h1\");\n    title.textContent = \"Burger Barn\";\n    header.appendChild(title);\n    header.appendChild(createNavbar());\n    return header;\n}\n\nfunction createNavbar() {\n    const navbar = document.createElement(\"nav\");\n    const ul = document.createElement(\"ul\");\n    ul.appendChild(createButton(\"about\"));\n    ul.appendChild(createButton(\"menu\"));\n    ul.appendChild(createButton(\"contact\"));\n    navbar.appendChild(ul);\n    return navbar;\n}\n\nfunction createButton(page) {\n    const li  = document.createElement(\"li\");\n    const button = document.createElement(\"button\");\n    button.setAttribute(\"id\", page);\n    button.setAttribute(\"type\", \"button\");\n    button.textContent = page.charAt(0).toUpperCase() + page.slice(1);\n    // add event listener\n    li.appendChild(button);\n    return li;\n}\n\nfunction createBody() {\n    const body = document.createElement(\"div\");\n    body.setAttribute(\"id\", \"body\");\n    return body; \n}\n\nupdateDisplay();\n\n//# sourceURL=webpack://restaurant/./src/index.js?");
 
 /***/ })
 
