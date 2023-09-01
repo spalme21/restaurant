@@ -1,9 +1,14 @@
-const content = document.querySelector("#content");
+import loadHome from "./about";
 
-function updateDisplay() {
+function loadWebsite() {
+    const body = document.querySelector('body');
+    const content = document.createElement("div");
+    content.classList.add("content");
     content.innerHTML = "";
     content.appendChild(createHeader());
     content.appendChild(createBody());
+    body.appendChild(content);
+    loadHome();
 };
 
 function createHeader() {
@@ -43,4 +48,4 @@ function createBody() {
     return body; 
 }
 
-updateDisplay();
+loadWebsite();
