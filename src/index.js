@@ -1,4 +1,5 @@
 import loadHome from "./about";
+import "./style.css";
 
 function loadWebsite() {
     const body = document.querySelector('body');
@@ -6,7 +7,7 @@ function loadWebsite() {
     content.classList.add("content");
     content.innerHTML = "";
     content.appendChild(createHeader());
-    content.appendChild(createBody());
+    content.appendChild(createMain());
     body.appendChild(content);
     loadHome();
 };
@@ -42,10 +43,10 @@ function createButton(page) {
     return li;
 }
 
-function createBody() {
-    const body = document.createElement("div");
-    body.setAttribute("id", "body");
-    return body; 
+function createMain() {
+    const main = document.createElement("div");
+    main.setAttribute("id", "main");
+    return main; 
 }
 
 loadWebsite();
