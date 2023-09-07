@@ -1,5 +1,6 @@
 import loadHome from "./about";
 import loadMenu from "./menu";
+import loadContacts from "./contact";
 import "./style.css";
 
 function loadWebsite() {
@@ -36,8 +37,9 @@ function createNavbar() {
     ul.appendChild(menu);
 
     const contact = createButton("contact")
-
+    contact.addEventListener("click", loadContacts);
     ul.appendChild(contact);
+    
     navbar.appendChild(ul);
     return navbar;
 }
