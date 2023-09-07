@@ -6,7 +6,7 @@ html, body {
 
 h1, p {
    text-align: center;
-   color: darkgray;
+   
 }
 
 nav ul {
@@ -24,7 +24,14 @@ button {
     display: inline-block;
     font-size: 16px;
     background-color: #f44336;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+    transition-duration: 0.4s;
 }
+
+button:hover {
+    background-color: rgb(255, 94, 94);
+  }
 
 #main {
     margin: auto;
@@ -35,4 +42,17 @@ button {
 
 #about_burgers {
     width: 33vw;
+}
+
+#menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.menu-item {
+    width: 20vw;
+}
+
+.menu-item img {
+    width: 100%;
 }

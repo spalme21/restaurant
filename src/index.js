@@ -1,4 +1,5 @@
 import loadHome from "./about";
+import loadMenu from "./menu";
 import "./style.css";
 
 function loadWebsite() {
@@ -25,9 +26,18 @@ function createHeader() {
 function createNavbar() {
     const navbar = document.createElement("nav");
     const ul = document.createElement("ul");
-    ul.appendChild(createButton("about"));
-    ul.appendChild(createButton("menu"));
-    ul.appendChild(createButton("contact"));
+
+    const about = createButton("about")
+    about.addEventListener('click', loadHome);
+    ul.appendChild(about);
+
+    const menu = createButton("menu")
+    menu.addEventListener("click", loadMenu);
+    ul.appendChild(menu);
+
+    const contact = createButton("contact")
+
+    ul.appendChild(contact);
     navbar.appendChild(ul);
     return navbar;
 }
@@ -35,7 +45,6 @@ function createNavbar() {
 function createButton(page) {
     const li  = document.createElement("li");
     const button = document.createElement("button");
-    button.setAttribute("id", page);
     button.setAttribute("type", "button");
     button.textContent = page.charAt(0).toUpperCase() + page.slice(1);
     // add event listener

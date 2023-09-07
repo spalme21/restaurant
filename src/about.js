@@ -2,6 +2,7 @@ import Burgers from './images/about-burgers.jpg';
 
 function loadHome() {
     const main = document.querySelector("#main");
+    main.textContent = "";
 
     const img = new Image();
     img.src = Burgers;
